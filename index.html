@@ -10,6 +10,7 @@
   <script>
     const showInfo = () => {
       let y = 0;
+      const logoButton = document.querySelector("#logo-button");
       const phoneButton = document.querySelector("#phone-button");
       const whatsappButton = document.querySelector("#whatsapp-button");
       const gmailButton = document.querySelector("#gmail-button");
@@ -18,53 +19,75 @@
       const githubButton = document.querySelector("#github-button");
       const hackerrankButton = document.querySelector("#hackerrank-button");
       const leetcodeButton = document.querySelector("#leetcode-button");
+      const websiteButton = document.querySelector("#paintandquest-preview-button");
       const text = document.querySelector("#text");
 
-      phoneButton.setAttribute("visible", true);
+      logoButton.setAttribute("visible", true);
       setTimeout(() => {
-        whatsappButton.setAttribute("visible", true);
+        logoButton.setAttribute("visible", true);
       }, 300);
       setTimeout(() => {
-        gmailButton.setAttribute("visible", true);
+        phoneButton.setAttribute("visible", true);
       }, 600);
       setTimeout(() => {
-        linkedinButton.setAttribute("visible", true);
+        whatsappButton.setAttribute("visible", true);
       }, 900);
       setTimeout(() => {
-        instagramButton.setAttribute("visible", true);
+        gmailButton.setAttribute("visible", true);
       }, 1200);
       setTimeout(() => {
-        githubButton.setAttribute("visible", true);
+        linkedinButton.setAttribute("visible", true);
       }, 1500);
       setTimeout(() => {
-        hackerrankButton.setAttribute("visible", true);
+        instagramButton.setAttribute("visible", true);
       }, 1800);
-      setTimeout(() => {
-        leetcodeButton.setAttribute("visible", true);
-      }, 2100);
+      // setTimeout(() => {
+      //   githubButton.setAttribute("visible", true);
+      // }, 1500);
+      // setTimeout(() => {
+      //   hackerrankButton.setAttribute("visible", true);
+      // }, 1800);
+      // setTimeout(() => {
+      //   leetcodeButton.setAttribute("visible", true);
+      // }, 2100);
 
       let currentTab = '';
+      websiteButton.addEventListener('click', function (evt) {
+        window.location.href = "https://www.deepcytes.io";
+        // text.setAttribute("value", "https://softmind.tech");
+        // currentTab = 'web'; //
+      });
+      logoButton.addEventListener('click', function (evt) {
+        window.location.href = "https://www.deepcytes.io";
+        // text.setAttribute("value", "https://softmind.tech");
+        // currentTab = 'web'; //
+      });
       phoneButton.addEventListener('click', function (evt) {
         window.location.href = "tel:+91 8104235686";
         // text.setAttribute("value", "https://softmind.tech");
         // currentTab = 'web'; //
       });
       whatsappButton.addEventListener('click', function (evt) {
-        window.location.href = "https://api.whatsapp.com/send?phone=918104235686&text=Hey+Japneet%21";
+        window.location.href = "https://api.whatsapp.com/send?phone=918104235686&text=We+can+type+whatever+we+can+%3A%29";
         // text.setAttribute("value", "hello@softmind.tech");
         // currentTab = 'email';
       });
       gmailButton.addEventListener('click', function (evt) {
-        window.location.href = "mailto:japneetrajput2804@gmail.com";
+        window.location.href = "mailto:info@deepcytes.io";
         // text.setAttribute("value", "AR, VR solutions and consultation");
         // currentTab = 'profile';
       });
       linkedinButton.addEventListener('click', function (evt) {
-        window.location.href = "https://www.linkedin.com/in/japneetrajput/";
+        window.location.href = "https://www.linkedin.com/company/deepcytes/";
         // window.location.href="https://softmind.tech";
         // console.log("loc");
         // text.setAttribute("value", "Vancouver, Canada | Hong Kong");
         // currentTab = 'location';
+      });
+      instagramButton.addEventListener('click', function (evt) {
+        window.location.href = "https://instagram.com/deepcytes?igshid=YmMyMTA2M2Y=";
+        // text.setAttribute("value", "AR, VR solutions and consultation");
+        // currentTab = 'profile';
       });
 
       // text.addEventListener('click', function (evt) {
@@ -284,6 +307,7 @@
         <img id="icon-linkedin" src="./assets/card-example/icons/linkedinIconPNG.png" />
         <img id="icon-phone" src="./assets/card-example/icons/phoneIconnPNG.png" />
         <img id="icon-whatsapp" src="./assets/card-example/icons/whatsappIconPNG.png" />
+        <img id="icon-logo" src="./assets/card-example/icons/DeepcytesLogoLightTheme.png" />
         <img id="icon-play" src="./assets/card-example/icons/play.png" />
         <img id="icon-left" src="./assets/card-example/icons/left.png" />
         <img id="icon-right" src="./assets/card-example/icons/right.png" />
@@ -313,7 +337,7 @@
           <a-entity id="portfolio-item0">
             <!-- <a-video id="paintandquest-video-link" position="0.55 -0.35 0"  width="2.1" height="1.104"
               ></a-video> -->
-            <a-image id="paintandquest-preview-button" position="0.55 -0.35 0" class="clickable" src="#card-website" alpha-test="0.5"
+            <a-image id="paintandquest-preview-button" target="_blank" position="0.55 -0.25 0" class="clickable" src="#card-website" alpha-test="0.5"
                height="1.104" width="2.1">
             </a-image>
           </a-entity>
@@ -334,27 +358,31 @@
 
         </a-entity>
 
-        <a-image visible=false id="phone-button" class="clickable" src="#icon-phone" position="-0.42 0.5 0"
+        <a-image visible=true id="logo-button" target="_blank" class="clickable" src="#icon-logo" position="-0.10 0.5 0"
+          height="0.15" width="0.65"
+          animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
+
+        <a-image visible=false id="phone-button" target="_blank" class="clickable" src="#icon-phone" position="0.42 0.5 0"
           height="0.15" width="0.15"
           animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
 
-        <a-image visible=false id="whatsapp-button" class="clickable" src="#icon-whatsapp" alpha-test="0.5" position="-0.14 0.5 0"
+        <a-image visible=false id="whatsapp-button" target="_blank" class="clickable" src="#icon-whatsapp" alpha-test="0.5" position="0.7 0.5 0"
           height="0.15" width="0.15"
           animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
 
-        <a-image visible=false id="gmail-button" class="clickable" src="#icon-gmail" position="0.14 0.5 0" height="0.15"
+        <a-image visible=false id="gmail-button" target="_blank" class="clickable" src="#icon-gmail" position="0.98 0.5 0" height="0.15"
           width="0.15"
           animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
 
-        <a-image visible=false id="linkedin-button" class="clickable" src="#icon-linkedin" position="0.42 0.5 0"
+        <a-image visible=false id="linkedin-button" target="_blank" class="clickable" src="#icon-linkedin" position="1.26 0.5 0"
           height="0.15" width="0.15"
           animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
         
-        <a-image visible=false id="instagram-button" class="clickable" src="#icon-instagram" position="0.70 0.5 0"
+        <a-image visible=false id="instagram-button" target="_blank" class="clickable" src="#icon-instagram" position="1.54 0.5 0"
           height="0.15" width="0.15"
           animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
         
-        <a-image visible=false id="github-button" class="clickable" src="#icon-github" position="0.98 0.5 0"
+        <!-- <a-image visible=false id="github-button" class="clickable" src="#icon-github" position="0.98 0.5 0"
           height="0.15" width="0.15"
           animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
         
@@ -364,7 +392,7 @@
         
         <a-image visible=false id="leetcode-button" class="clickable" src="#icon-leetcode" position="1.54 0.5 0"
           height="0.15" width="0.15"
-          animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
+          animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image> -->
 
         <!-- <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model> -->
 
