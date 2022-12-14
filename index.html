@@ -106,18 +106,18 @@
           //   showPortfolioItem(currentItem);
           // });
 
-          paintandquestPreviewButton.addEventListener('click', () => {
-            paintandquestPreviewButton.setAttribute("visible", false);
-            const testVideo = document.createElement("video");
-            const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
-            if (canplayWebm == "") {
-              document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
-              document.querySelector("#paintandquest-video-mp4").play();
-            } else {
-              document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
-              document.querySelector("#paintandquest-video-webm").play();
-            }
-          });
+          // paintandquestPreviewButton.addEventListener('click', () => {
+          //   paintandquestPreviewButton.setAttribute("visible", false);
+          //   const testVideo = document.createElement("video");
+          //   const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
+          //   if (canplayWebm == "") {
+          //     document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
+          //     document.querySelector("#paintandquest-video-mp4").play();
+          //   } else {
+          //     document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
+          //     document.querySelector("#paintandquest-video-webm").play();
+          //   }
+          // });
 
           setTimeout(() => {
             done();
@@ -157,11 +157,11 @@
         this.el.addEventListener('targetLost', event => {
           console.log("target found");
           if (canplayWebm == "") {
-            // document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
-            document.querySelector("#paintandquest-video-mp4").pause();
+            document.querySelector("#paintandquest-video-link").removeAttribute("src");
+            // document.querySelector("#paintandquest-video-mp4").pause();
           } else {
-            // document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
-            document.querySelector("#paintandquest-video-webm").pause();
+            document.querySelector("#paintandquest-video-link").removeAttribute("src");
+            // document.querySelector("#paintandquest-video-webm").pause();
           }
         });
         //this.el.emit('targetFound');
@@ -275,6 +275,7 @@
         <img id="card" src="./assets/card-example/icons/idCard.jpeg" />
         <img id="card-front" src="./assets/card-example/icons/DeepcytesFront.png" />
         <img id="card-back" src="./assets/card-example/icons/DeepcytesBack.png" />
+        <img id="card-website" src="./assets/card-example/icons/DeepcytesWebsite.png" />
         <img id="icon-github" src="./assets/card-example/icons/githubLogo.png" />
         <img id="icon-instagram" src="./assets/card-example/icons/instagramLogo.png" />
         <img id="icon-leetcode" src="./assets/card-example/icons/leetcodeIcon.png" />
@@ -310,13 +311,13 @@
         <!-- <a-image src="#icon-profilePic" position="0.85 0.06 0" height="0.4" width="0.5"></a-image> -->
         <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
           <a-entity id="portfolio-item0">
-            <a-video id="paintandquest-video-link" position="0.55 -0.35 0" webkit-playsinline playsinline width="2.1" height="1.104"
-              ></a-video>
-            <a-image id="paintandquest-preview-button" position="0.55 -0.35 0" class="clickable" src="#card-front" alpha-test="0.5"
+            <!-- <a-video id="paintandquest-video-link" position="0.55 -0.35 0"  width="2.1" height="1.104"
+              ></a-video> -->
+            <a-image id="paintandquest-preview-button" position="0.55 -0.35 0" class="clickable" src="#card-website" alpha-test="0.5"
                height="1.104" width="2.1">
             </a-image>
           </a-entity>
-          <a-entity id="portfolio-item1" visible=false>
+          <!-- <a-entity id="portfolio-item1" visible=false>
             <a-image class="clickable" src="#coffeemachine-preview" alpha-test="0.5" position="0 0 0" height="0.552"
               width="1">
             </a-image>
@@ -324,7 +325,7 @@
           <a-entity id="portfolio-item2" visible=false>
             <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
             </a-image>
-          </a-entity>
+          </a-entity> -->
 
           <a-image visible=false id="portfolio-left-button" class="clickable" src="#icon-left" position="-0.7 0 0"
             height="0.15" width="0.15"></a-image>
